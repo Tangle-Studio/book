@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Observer | 관찰자 기록보관소</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Outfit:wght@300;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="observer-bg"></div>
+
+    <!-- Observation Activity Graph Overlay -->
+    <div id="graph-overlay" class="hidden">
+        <div id="observation-logs">
+            <div class="log-header">OBSERVATION CHRONICLE</div>
+            <div id="github-graph-container"></div>
+            <div class="graph-legend">
+                <span>Less Records</span>
+                <div class="square level-0"></div>
+                <div class="square level-1"></div>
+                <div class="square level-2"></div>
+                <div class="square level-3"></div>
+                <div class="square level-4"></div>
+                <span>More Memories</span>
+            </div>
+            <button id="close-graph-btn" class="secondary-btn">CLOSE RECORDS</button>
+        </div>
+    </div>
+
+    <!-- Observer Modal -->
+    <div id="observer-modal" class="hidden">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <h2 id="modal-title">Initialization</h2>
+            <p id="modal-body">기록된 기억들을 초기화하시겠습니까?</p>
+            <div class="modal-buttons">
+                <button id="modal-cancel">취소</button>
+                <button id="modal-confirm" class="danger-btn">초기화</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="app-container">
+        <header>
+            <div class="logo">MEMORIES OF LUMEN</div>
+            <div class="status-bar">
+                <span id="observation-state">STATUS: OBSERVING</span>
+                <span id="observed-count">MEMORIES: --/--</span>
+            </div>
+        </header>
+
+        <main id="story-viewport">
+            <div id="diary-list" class="hidden">
+                <!-- Diary items injected by engine.js -->
+            </div>
+            <div id="narrative-content" class="fade-in">
+                <!-- Content injected by engine.js -->
+            </div>
+        </main>
+
+        <section id="controls">
+            <div id="action-buttons">
+                <!-- Buttons injected by engine.js -->
+            </div>
+        </section>
+
+        <footer>
+            <button id="view-list-btn" class="secondary-btn">INDEX</button>
+            <button id="view-graph-btn" class="secondary-btn">ACTIVITY</button>
+            <button id="reset-btn" class="secondary-btn">RESET</button>
+            <div class="footer-copyright">© 2026 Tangle. All rights reserved.</div>
+        </footer>
+    </div>
+
+    <script src="story_data.js"></script>
+    <script src="engine.js"></script>
+</body>
+
+</html>
